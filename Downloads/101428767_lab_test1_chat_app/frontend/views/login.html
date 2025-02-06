@@ -1,0 +1,69 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Login</title>
+    <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+    <link
+      rel="stylesheet"
+      href="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css"
+    />
+    <link rel="stylesheet" href="../public/styles.css" />
+    <!-- Custom CSS -->
+  </head>
+
+  <body>
+    <div class="container mt-5">
+      <h2 class="text-center">Login</h2>
+      <form id="loginForm">
+        <div class="form-group">
+          <label for="username">Username:</label>
+          <input type="text" class="form-control" id="username" required />
+        </div>
+        <div class="form-group">
+          <label for="password">Password:</label>
+          <input type="password" class="form-control" id="password" required />
+        </div>
+        <button type="submit" class="btn btn-primary btn-block">Login</button>
+      </form>
+      <p class="text-center mt-3">
+        Don't have an account? <a href="signup.html">Sign up</a>
+      </p>
+    </div>
+
+    <script>
+      $(document).ready(() => {
+        // Redirect to chat if user is already logged in
+        const user = localStorage.getItem("user");
+        if (user) {
+          window.location.href = "chat.html";
+          return;
+        }
+
+        // Handle Login Form Submission
+        $("#loginForm").submit(function (event) {
+          event.preventDefault();
+
+          const username = $("#username").val();
+          const password = $("#password").val();
+
+          $.ajax({
+            url: "http://localhost:5000/api/auth/login",
+            method: "POST",
+            contentType: "application/json",
+            data: JSON.stringify({ username, password }),
+            success: function (response) {
+              alert("Login successful!");
+              localStorage.setItem("user", JSON.stringify(response.user));
+              window.location.href = "chat.html"; // Redirect to chat page
+            },
+            error: function (xhr) {
+              alert(xhr.responseJSON.message);
+            },
+          });
+        });
+      });
+    </script>
+  </body>
+</html>

@@ -1,0 +1,115 @@
+/* General styles for the chat page */
+body.chat-page {
+  background-color: #002200; /* Dark green background */
+  color: #ffffff; /* White text color for contrast */
+  font-family: Arial, sans-serif;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  height: 100vh;
+  margin: 0;
+  padding: 20px;
+}
+
+/* Chat Container */
+.chat-container {
+  background-color: #003300; /* Slightly lighter dark green */
+  padding: 20px;
+  border-radius: 10px;
+  box-shadow: 0px 4px 10px rgba(0, 0, 0, 0.5);
+  width: 90%;
+  max-width: 600px;
+}
+
+/* Chat Title */
+h2 {
+  text-align: center;
+  color: #ffffff;
+  margin-bottom: 15px;
+  font-weight: bold;
+}
+
+/* Room Selection Dropdown */
+#roomSelect {
+  background-color: #004d00; /* Dark Green */
+  color: white;
+  border: 2px solid #66ff66;
+  padding: 10px;
+  border-radius: 5px;
+  font-size: 16px;
+}
+
+/* Chat Messages Box */
+.chat-messages {
+  height: 300px;
+  overflow-y: scroll;
+  background-color: #001a00; /* Darker Green */
+  padding: 10px;
+  border-radius: 8px;
+  border: 2px solid #66ff66;
+}
+
+/* Typing Indicator */
+.typing-indicator {
+  display: none;
+  font-style: italic;
+  color: #99ff99;
+  margin-top: 5px;
+}
+
+/* Message Input Field */
+#messageInput {
+  background-color: #004d00;
+  color: white;
+  border: 2px solid #66ff66;
+  padding: 10px;
+  border-radius: 5px;
+  font-size: 16px;
+  width: calc(100% - 22px);
+}
+
+/* Green Buttons */
+.btn-green {
+  background-color: #008000; /* Dark Green */
+  color: #ffffff;
+  font-weight: bold;
+  border: 2px solid #66ff66;
+  padding: 10px;
+  border-radius: 5px;
+  cursor: pointer;
+}
+
+.btn-green:hover {
+  background-color: #006600;
+  color: #ffffff;
+}
+
+/* Logout Button (Dark Green) */
+.btn-logout {
+  background-color: #005500; /* Dark Green */
+  color: white;
+  font-weight: bold;
+  border: 2px solid #ff6666;
+  padding: 10px;
+  border-radius: 5px;
+  cursor: pointer;
+}
+
+.btn-logout:hover {
+  background-color: #003d00;
+  border-color: #ff3333;
+}
+
+/* Margin Adjustments */
+.mt-3 {
+  margin-top: 1rem;
+}
+
+.mt-5 {
+  margin-top: 3rem;
+}
+
+/* Text Alignment */
+.text-center {
+  text-align: center;
+}
